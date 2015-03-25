@@ -12,11 +12,11 @@
 
   Synctext.prototype.init = function () {
     this.sync()
-    this.$elem.on('input', $.proxy(this.onInput, this))
+    this.$elem.on('input keydown', $.proxy(this.onInputing, this))
   }
 
-  Synctext.prototype.onInput = function (event) {
-    if (event.which === 13) {
+  Synctext.prototype.onInputing = function (event) {
+    if (event.type === 'keydown' && event.which === 13) {
       $(event.currentTarget).blur()
       event.preventDefault() // prevent break line
     }
