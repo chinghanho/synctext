@@ -16,8 +16,7 @@
   }
 
   Synctext.prototype.onInput = function (event) {
-    var key = event.keyCode || event.charCode // IE || others
-    if (key === 13) {
+    if (event.which === 13) {
       $(event.currentTarget).blur()
       event.preventDefault() // prevent break line
     }
